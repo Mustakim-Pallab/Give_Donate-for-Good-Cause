@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "give-01"
-  }
+    "default": "give-01",
+    "staging": "give-3d6fc"
+  },
+  "targets": {}
 }
