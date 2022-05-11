@@ -1,6 +1,6 @@
 export const photos = [];
 
-fetch('http://localhost:5000/photo-gallery')
+fetch('https://tranquil-temple-58736.herokuapp.com/photo-gallery')
   .then(res => res.json())
   .then(data => {
     data.forEach(photo => {

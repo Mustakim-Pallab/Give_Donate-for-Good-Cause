@@ -25,13 +25,13 @@ const ManageAdmins = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deleteAdmin/${id}`, {
+                fetch(`https://tranquil-temple-58736.herokuapp.com/deleteAdmin/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('http://localhost:5000/admins')
+                            fetch('https://tranquil-temple-58736.herokuapp.com/admins')
                                 .then(res => res.json())
                                 .then(data => {
                                     setAdmins(data);
@@ -56,7 +56,7 @@ const ManageAdmins = () => {
 
     const onSubmit = newAdminData => {
 
-        const url = "http://localhost:5000/addAdmin";
+        const url = "https://tranquil-temple-58736.herokuapp.com/addAdmin";
 
         fetch(url, {
             method: "POST",
@@ -87,7 +87,7 @@ const ManageAdmins = () => {
     }, [])
 
     const reloadData = () => {
-        fetch('http://localhost:5000/admins')
+        fetch('https://tranquil-temple-58736.herokuapp.com/admins')
             .then(res => res.json())
             .then(data => {
                 setAdmins(data);

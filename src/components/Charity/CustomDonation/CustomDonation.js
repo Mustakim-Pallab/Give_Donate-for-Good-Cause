@@ -22,7 +22,7 @@ const CustomDonation = () => {
         data.donationInfo = donationInfo;
         data.sampleImage = imageURL;
 
-        const url = "http://localhost:5000/newDonationRequest";
+        const url = "https://tranquil-temple-58736.herokuapp.com/newDonationRequest";
 
         fetch(url, {
             method: "POST",

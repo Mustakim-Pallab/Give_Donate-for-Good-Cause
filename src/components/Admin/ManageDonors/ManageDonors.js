@@ -25,13 +25,13 @@ const ManageDonors = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deleteDonor/${id}`, {
+                fetch(`https://tranquil-temple-58736.herokuapp.com/deleteDonor/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('http://localhost:5000/donors')
+                            fetch('https://tranquil-temple-58736.herokuapp.com/donors')
                                 .then(res => res.json())
                                 .then(data => {
                                     setDonors(data);
@@ -60,7 +60,7 @@ const ManageDonors = () => {
 
         newDonorData.photoURL = imageURL;
 
-        const url = "http://localhost:5000/addDonor";
+        const url = "https://tranquil-temple-58736.herokuapp.com/addDonor";
 
         fetch(url, {
             method: "POST",
@@ -91,7 +91,7 @@ const ManageDonors = () => {
     }, [])
 
     const reloadData = () => {
-        fetch('http://localhost:5000/donors')
+        fetch('https://tranquil-temple-58736.herokuapp.com/donors')
             .then(res => res.json())
             .then(data => {
                 setDonors(data);

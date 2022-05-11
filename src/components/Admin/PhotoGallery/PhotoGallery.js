@@ -28,7 +28,7 @@ const PhotoGallery = () => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/photo-gallery')
+        fetch('https://tranquil-temple-58736.herokuapp.com/photo-gallery')
             .then(res => res.json())
             .then(data => setPhotos(data));
     }, [])
@@ -48,7 +48,7 @@ const PhotoGallery = () => {
             height: data.height
 
         };
-        const url = "http://localhost:5000/addPhoto";
+        const url = "https://tranquil-temple-58736.herokuapp.com/addPhoto";
 
         fetch(url, {
             method: "POST",
@@ -92,7 +92,7 @@ const PhotoGallery = () => {
 
     const [totalPhotos, setTotalPhots] = useState(null);
     const loadPhotos = () => {
-        fetch('http://localhost:5000/photo-gallery')
+        fetch('https://tranquil-temple-58736.herokuapp.com/photo-gallery')
             .then(res => res.json())
             .then(data => {
                 setTotalPhots(data.length);

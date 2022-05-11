@@ -10,7 +10,7 @@ const CheckAdmin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/isAdmin?email=${loggedInUser.email}`)
+        fetch(`https://tranquil-temple-58736.herokuapp.com/isAdmin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(result => {
                 if (result) {

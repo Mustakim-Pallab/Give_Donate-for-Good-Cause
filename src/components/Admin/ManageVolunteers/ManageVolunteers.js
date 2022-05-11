@@ -23,13 +23,13 @@ const ManageVolunteers = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deleteVolunteer/${id}`, {
+                fetch(`https://tranquil-temple-58736.herokuapp.com/deleteVolunteer/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('http://localhost:5000/volunteers')
+                            fetch('https://tranquil-temple-58736.herokuapp.com/volunteers')
                                 .then(res => res.json())
                                 .then(data => {
                                     setVolunteers(data);
@@ -54,7 +54,7 @@ const ManageVolunteers = () => {
         const {name, age, gender, email, phone, facebook} = volunteerDetails;
         const newVolunteer = {name, age, gender, email, phone, facebook};
 
-        const url = "http://localhost:5000/addVolunteer";
+        const url = "https://tranquil-temple-58736.herokuapp.com/addVolunteer";
 
         fetch(url, {
             method: "POST",
@@ -80,13 +80,13 @@ const ManageVolunteers = () => {
 
 
     const deleteVolunteerRequest = id => {
-        fetch(`http://localhost:5000/deleteVolunteerRequest/${id}`, {
+        fetch(`https://tranquil-temple-58736.herokuapp.com/deleteVolunteerRequest/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    fetch('http://localhost:5000/volunteer-requests')
+                    fetch('https://tranquil-temple-58736.herokuapp.com/volunteer-requests')
                         .then(res => res.json())
                         .then(data => {
                             setRequested(data);
@@ -109,13 +109,13 @@ const ManageVolunteers = () => {
     }, [])
 
     const reloadScreen = () => {
-        fetch('http://localhost:5000/volunteer-requests')
+        fetch('https://tranquil-temple-58736.herokuapp.com/volunteer-requests')
             .then(res => res.json())
             .then(data => {
                 setRequested(data);
             });
 
-        fetch('http://localhost:5000/volunteers')
+        fetch('https://tranquil-temple-58736.herokuapp.com/volunteers')
             .then(res => res.json())
             .then(data => {
                 setVolunteers(data);

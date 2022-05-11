@@ -28,7 +28,7 @@ const GalleryView = () => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/photo-gallery')
+        fetch('https://tranquil-temple-58736.herokuapp.com/photo-gallery')
             .then(res => res.json())
             .then(data => setPhotos(data));
     }, [])

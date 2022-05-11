@@ -26,13 +26,13 @@ const Dashboard = () => {
     const [requests, setRequests] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userSpecificData?email=${loggedInUser.email}`)
+        fetch(`https://tranquil-temple-58736.herokuapp.com/userSpecificData?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setUserDonationData(data);
             });
 
-        fetch(`http://localhost:5000/isDonor?email=${loggedInUser.email}`)
+        fetch(`https://tranquil-temple-58736.herokuapp.com/isDonor?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(result => {
                 if (result) {
@@ -40,7 +40,7 @@ const Dashboard = () => {
                 }
             })
 
-        fetch(`http://localhost:5000/isVolunteer?email=${loggedInUser.email}`)
+        fetch(`https://tranquil-temple-58736.herokuapp.com/isVolunteer?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(result => {
                 if (result) {
@@ -48,7 +48,7 @@ const Dashboard = () => {
                 }
             })
 
-        fetch(`http://localhost:5000/userSpecificRequests?email=${loggedInUser.email}`)
+        fetch(`https://tranquil-temple-58736.herokuapp.com/userSpecificRequests?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setRequests(data);
@@ -66,13 +66,13 @@ const Dashboard = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deletePost/${id}`, {
+                fetch(`https://tranquil-temple-58736.herokuapp.com/deletePost/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch(`http://localhost:5000/userSpecificData?email=${loggedInUser.email}`)
+                            fetch(`https://tranquil-temple-58736.herokuapp.com/userSpecificData?email=${loggedInUser.email}`)
                                 .then(res => res.json())
                                 .then(data => {
                                     setUserDonationData(data);
@@ -100,13 +100,13 @@ const Dashboard = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deleteDonationRequest/${id}`, {
+                fetch(`https://tranquil-temple-58736.herokuapp.com/deleteDonationRequest/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch(`http://localhost:5000/userSpecificRequests?email=${loggedInUser.email}`)
+                            fetch(`https://tranquil-temple-58736.herokuapp.com/userSpecificRequests?email=${loggedInUser.email}`)
                                 .then(res => res.json())
                                 .then(data => {
                                     setRequests(data);

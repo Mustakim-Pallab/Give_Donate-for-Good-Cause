@@ -27,13 +27,13 @@ const TogPost = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deletePost/${id}`, {
+                fetch(`https://tranquil-temple-58736.herokuapp.com/deletePost/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('http://localhost:5000/posts')
+                            fetch('https://tranquil-temple-58736.herokuapp.com/posts')
                                 .then(res => res.json())
                                 .then(data => {
                                     setPosts(data);
@@ -57,7 +57,7 @@ const TogPost = () => {
         postDetails.datePosted = new Date().toString('dd/MM/yyyy')
         const donorId = postDetails.donorId;
 
-        fetch(`http://localhost:5000/getDonorData/${donorId}`)
+        fetch(`https://tranquil-temple-58736.herokuapp.com/getDonorData/${donorId}`)
             .then(res => res.json())
             .then(data => {
                 if (data) {
@@ -75,7 +75,7 @@ const TogPost = () => {
     }, [])
 
     const fetchPosts = () => {
-        fetch('http://localhost:5000/posts')
+        fetch('https://tranquil-temple-58736.herokuapp.com/posts')
             .then(res => res.json())
             .then(data => {
                 setPosts(data);
@@ -90,7 +90,7 @@ const TogPost = () => {
         newPost.datePosted = new Date().toUTCString();
         newPost.donorEmail = forcedData.email;
 
-        const url = "http://localhost:5000/addPost";
+        const url = "https://tranquil-temple-58736.herokuapp.com/addPost";
 
         fetch(url, {
             method: "POST",
