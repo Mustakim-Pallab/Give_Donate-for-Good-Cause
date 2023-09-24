@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="screenshots/logo.svg" width="35" height="35" style="margin-right: 10px"/> Give 
+  <img src="Client Side/screenshots/logo.svg" width="35" height="35" style="margin-right: 10px"/> Give 
 </h1>
 
 
